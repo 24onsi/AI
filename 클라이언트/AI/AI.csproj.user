@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="VIEW\HEALTH_DATA.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\HEALTH_PREDICT.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\JOIN.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\LOGIN.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\MAIN.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEW\MY_PAGE.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TextBoxRoundedStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\HEALTH_DATA.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\HEALTH_PREDICT.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\JOIN.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\LOGIN.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\MAIN.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEW\MY_PAGE.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

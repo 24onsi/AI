@@ -1,0 +1,64 @@
+﻿<Page x:Class="AI.VIEW.MAIN"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AI.VIEW"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1100"
+      Title="MAIN">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="88*"/>
+            <ColumnDefinition Width="813*"/>
+            <ColumnDefinition Width="88*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="105*"/>
+            <RowDefinition Height="547*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="52" Grid.Row="1" VerticalAlignment="Top" Width="800" RadiusX="25" RadiusY="25" Fill="#FFEDF1EB" Margin="50,46,0,0"/>
+
+
+        <Button x:Name="btnm_Login" Grid.Column="1" Content="로그인 &amp; 회원가입" HorizontalAlignment="Left" Height="64" Margin="635,263,0,0" Grid.Row="2" VerticalAlignment="Top" Width="232" FontSize="27" FontFamily="Hancom MalangMalang Bold" Foreground="#FF104257" Background="#FFEEE9E4" BorderBrush="#FFD0C3B6" Padding="1,1,-4,1" BorderThickness="0,0,4,4" Click="btnm_Login_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="btnm_Health" Grid.Column="1" Content="나의 건강 예측하기" HorizontalAlignment="Left" Height="64" Margin="635,173,0,0" Grid.Row="2" VerticalAlignment="Top" Width="232" FontSize="27" FontFamily="Hancom MalangMalang Bold" Foreground="#FF104257" Background="#FFEEE9E4" BorderBrush="#FFD0C3B6" BorderThickness="0,0,4,4" Click="btnm_Health_Click" FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="btnm_MyPage" Grid.Column="1" Content="My   Page" HorizontalAlignment="Left" Height="64" Margin="635,354,0,0" Grid.Row="2" VerticalAlignment="Top" Width="232" FontSize="28" FontFamily="Hancom MalangMalang Bold" FontWeight="Bold" Foreground="#FF104257" BorderBrush="#FFD0C3B6" Background="#FFEEE9E4" BorderThickness="0,0,4,4" Click="btnm_MyPage_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Rectangle Height="100" VerticalAlignment="Center" Grid.ColumnSpan="3" Fill="#FFC1CCBC"/>
+        <Rectangle Height="100" VerticalAlignment="Center" Grid.ColumnSpan="3" Fill="#FFC1CCBC" Grid.Row="4"/>
+        <Label x:Name="lb_mainName" Grid.Column="1" Content="안녕하세요. 반갑습니다." HorizontalAlignment="Left" Height="52" Margin="74,46,0,0" Grid.Row="1" VerticalAlignment="Top" Width="533" VerticalContentAlignment="Center" FontSize="30" FontFamily="Hancom MalangMalang Bold" Background="{x:Null}" Foreground="#FF104257"/>
+        <Image Margin="28,41,334,22" Source="/Resources/pngwing.com.png" Stretch="Fill" Grid.Row="2" Grid.Column="1"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="42" Margin="635,90,0,0" Grid.Row="2" VerticalAlignment="Top" Width="232" RadiusX="10" RadiusY="10" Fill="#FFDADED8"/>
+        <Label Grid.Column="1" Content="Manu" HorizontalAlignment="Left" Height="32" Margin="647,95,0,0" Grid.Row="2" VerticalAlignment="Top" Width="178" FontFamily="Headline R" FontSize="20" Foreground="#FF366164"/>
+        <Label Grid.Column="1" Content="Health Guard" HorizontalAlignment="Left" Height="62" Margin="691,0,0,0" VerticalAlignment="Center" Width="248" VerticalContentAlignment="Center" FontSize="35" FontFamily="Arial Rounded MT Bold" Foreground="White" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnm_Logout" Grid.Column="1" Content="로 그 아 웃" HorizontalAlignment="Left" Height="44" Margin="635,445,0,0" Grid.Row="2" VerticalAlignment="Top" Width="228" Background="#FFEEE9E4" BorderBrush="#FFD0C3B6" BorderThickness="0,0,4,4" FontFamily="Hancom MalangMalang Bold" FontSize="18" Foreground="#FF104257" RenderTransformOrigin="0.512,0.028" Click="btnm_Logout_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Page>

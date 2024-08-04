@@ -1,0 +1,157 @@
+﻿<Page x:Class="AI.VIEW.MY_PAGE"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AI.VIEW"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1100"
+      Title="MY_PAGE" Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="111*"/>
+            <ColumnDefinition Width="878*"/>
+            <ColumnDefinition Width="111*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="92*"/>
+            <RowDefinition Height="405*"/>
+            <RowDefinition Height="110*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Center" Grid.Row="3" Stroke="#FFD0C3B6" Width="878" RadiusX="30" RadiusY="30" StrokeThickness="3" Grid.Column="1" Margin="0,10,0,10"/>
+        <Label Grid.Column="1" Content="님" HorizontalAlignment="Left" Height="48" Margin="165,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="75" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Hancom MalangMalang Bold" FontSize="30" Background="{x:Null}" Foreground="#FF454545"/>
+        <Button x:Name="btnm_Main" Grid.Column="1" Content="메 인 으 로" HorizontalAlignment="Left" Height="60" Margin="599,0,0,0" Grid.Row="4" VerticalAlignment="Center" Width="250" FontFamily="Hancom MalangMalang Bold" FontSize="25" FontWeight="Bold" Background="#FFEEE9E4" BorderBrush="#FFD0C3B6" Foreground="#FF52595B" Padding="1,1,1,1" BorderThickness="0,0,3,3" Click="btnm_Main_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Grid.Column="1" Content="성별 : " HorizontalAlignment="Left" Height="48" Grid.Row="2" VerticalAlignment="Center" Width="114" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Hancom MalangMalang Bold" FontSize="30" Background="{x:Null}" Foreground="#FF454545" Margin="284,0,0,0"/>
+        <Label Grid.Column="1" Content="세" HorizontalAlignment="Left" Height="48" Grid.Row="2" VerticalAlignment="Center" Width="76" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Hancom MalangMalang Bold" FontSize="30" Background="{x:Null}" Foreground="#FF454545" Margin="641,0,0,0"/>
+        <Label Grid.Column="1" Content="연령 : " HorizontalAlignment="Left" Height="48" Grid.Row="2" VerticalAlignment="Center" Width="96" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Hancom MalangMalang Bold" FontSize="30" Background="{x:Null}" Foreground="#FF454545" Margin="507,0,0,0"/>
+        <Label x:Name="lbm_Name" Grid.Column="1" Content="유 시 온" HorizontalAlignment="Left" Height="48" Margin="26,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="166" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Hancom MalangMalang Bold" FontSize="30" Background="{x:Null}" Foreground="#FF454545" FontWeight="Bold"/>
+        <Label x:Name="lbm_Gender" Grid.Column="1" Content="여성" HorizontalAlignment="Left" Height="48" Margin="381,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="79" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Hancom MalangMalang Bold" FontSize="30" Background="{x:Null}" Foreground="#FF454545" FontWeight="Bold"/>
+        <Label x:Name="lbm_Age" Grid.Column="1" Content="29" HorizontalAlignment="Left" Height="48" Margin="591,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="78" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Hancom MalangMalang Bold" FontSize="30" Background="{x:Null}" Foreground="#FF454545" FontWeight="Bold"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Center" Height="3" Margin="0,73,0,0" Grid.Row="2" VerticalAlignment="Top" Width="820" Fill="#FFEEE9E4"/>
+        <ListView x:Name="lv_myHistory" SelectionChanged="Select_HistoryLog" Grid.Column="1" HorizontalAlignment="Center" Height="357" Grid.Row="3" VerticalAlignment="Center" Width="830" d:ItemsSource="{d:SampleData ItemCount=2}" BorderBrush="{x:Null}" Foreground="#FF454545" Background="{x:Null}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Margin" Value="0,0,0,1"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="Height" Value="35"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Foreground" Value="#FF454545"/>
+                    <Setter Property="Background" Value="#FFEEEEE4"/>
+                    <Setter Property="FontFamily" Value="MoeumT R"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="날짜" Width="100" DisplayMemberBinding="{Binding CheckDate}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CheckDate}" 
+                                   FontSize="15" 
+                                   FontFamily="MoeumT R" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="비만도" Width="90" DisplayMemberBinding="{Binding BMI}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CheckDate}" 
+                                   FontSize="15" 
+                                   FontFamily="MoeumT R" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="최고혈압" Width="100" DisplayMemberBinding="{Binding SBP}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CheckDate}" 
+                                   FontSize="15" 
+                                   FontFamily="MoeumT R" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="최저혈압" Width="100" DisplayMemberBinding="{Binding DBP}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CheckDate}" 
+                                   FontSize="15" 
+                                   FontFamily="MoeumT R" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="공복혈당" Width="100" DisplayMemberBinding="{Binding GLU}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CheckDate}" 
+                                   FontSize="15" 
+                                   FontFamily="MoeumT R" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="총 콜레스테롤" Width="110" DisplayMemberBinding="{Binding TC}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CheckDate}" 
+                                   FontSize="15" 
+                                   FontFamily="MoeumT R" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="중성지방" Width="100" DisplayMemberBinding="{Binding TG}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CheckDate}" 
+                                   FontSize="15" 
+                                   FontFamily="MoeumT R" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="고밀도 콜레스테롤" Width="120" DisplayMemberBinding="{Binding HDL}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CheckDate}" 
+                                   FontSize="15" 
+                                   FontFamily="MoeumT R" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Rectangle Height="100" VerticalAlignment="Center" Grid.ColumnSpan="3" Fill="#FFC1CCBC"/>
+        <Rectangle Height="100" VerticalAlignment="Center" Grid.ColumnSpan="3" Fill="#FFC1CCBC" Grid.Row="5"/>
+        <Label Grid.Column="1" Content="My Page" HorizontalAlignment="Left" Height="68" Grid.Row="1" VerticalAlignment="Center" Width="278" VerticalContentAlignment="Center" FontFamily="Hancom MalangMalang Bold" FontSize="35" Background="{x:Null}" Foreground="#FF454545" FontWeight="Bold" RenderTransformOrigin="0.306,0.108"/>
+        <Label Grid.Column="1" Content="Health Guard" HorizontalAlignment="Left" Height="62" Margin="679,0,0,0" VerticalAlignment="Center" Width="248" VerticalContentAlignment="Center" FontSize="35" FontFamily="Arial Rounded MT Bold" Foreground="White" Grid.Row="5" Grid.ColumnSpan="2"/>
+    </Grid>
+</Page>
